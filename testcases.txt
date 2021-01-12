@@ -1,0 +1,57 @@
+The query can be any valid maths expression with 4 operators(+,-,*,/) with or without spaces(ex: "2 + 3", "2+3")
+
+Server accepts queries of size less than 1024 bytes (approx 25 to 30 operators)
+
+Server supports queries with multiple operators(ex: "2", "3 * 4", "4 + 5 * 6 / 5") in a single query without quotes
+
+Server supports negative Integers(ex: "3 * -5", "-4 + 5 * 6") without quotes
+
+
+Testcases provided by the instructor:
+
+~~~~~~~~~~~~~~~~~~~ TEST1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+Started server1 and a single client
+-> 2 + 5 => server returns 7
+-> 5 - 2 => server returns 3
+-> -3 * 4 => server returns -12
+-> 5 / 2 => server returns 2.5
+
+~~~~~~~~~~~~~~~~~~~ TEST2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+Started a client and terminated it and then started a second client which also can chat with the server.
+
+~~~~~~~~~~~~~~~~~~~ TEST3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+When the first client is connected with the server, the second client which is trying to connect to the server will get an error
+
+~~~~~~~~~~~~~~~~~~~ TEST4 ~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+Started server2, it can perform the same operations mentioned in TEST1 and the server2 responds with no error.
+
+~~~~~~~~~~~~~~~~~~~ TEST5 ~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+Server2 connects with multiple clients simultaneously and responds to their queries without an error
+
+~~~~~~~~~~~~~~~~~~~ TEST6 ~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+Connecting and disconnecting the second client is having no effect on first client. 
+
+~~~~~~~~~~~~~~~~~~~ TEST7 ~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+Server2 starts individual processes for every client connected and this is checked through "lsof" command which shows process_ids (PID)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+
+Additional testcases regarding queries:
+
+TEST1:
+
+"3 + 4/5" => server returns 3.8
+"3 / 5 * 4" => server returns 2.4
+"3*4+5/2*2+5" => server returns 22.0
+"3*4+5/-2*2*-3" => server returns 27.0
+
+~~~~~~~~~~~~~~~~~~~~~~~~END~~~~~~~~~~~~~~~~~~~~~~~~~~
+
