@@ -1,18 +1,19 @@
-**The folder `B18CSE059` contains following files**
+**The folder `Socket_Programming` contains following files**
 * server1.py
 * server2.py
 * Makefile
 * testcases.txt
 * README.md
 ---
-###Environment
+**Environment**
 
 *Tested on _Ubuntu 18.04_* 
 
 *Python version 3*
 
 ---
-###If servers are run using below `make` they will listen on port `5000`
+
+**If servers are run using below `make` they will listen on port `5000`**
 
 **Both servers listen on `all` local IP addresses(0.0.0.0)**
 
@@ -26,7 +27,7 @@
 
 ---
 
-###To run servers manually
+***To run servers manually***
 
 **Both servers listen on `all` local IP addresses(0.0.0.0)**
 
